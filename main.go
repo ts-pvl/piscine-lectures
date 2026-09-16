@@ -1,5 +1,11 @@
 package main
 
+import "fmt"
+
+func printNumber(n int) {
+	fmt.Println(n)
+}
+
 func main() {
-	files()
+	forEach([]int{1, 2, 3}, printNumber)
 }

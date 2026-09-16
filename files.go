@@ -7,7 +7,7 @@ import (
 )
 
 func files() {
-	file, err := os.Open("README.md")
+	file, err := os.Open("files.go")
 	if err != nil {
 		fmt.Println("error")
 		return
@@ -15,12 +15,15 @@ func files() {
 
 	bytes, err := io.ReadAll(file)
 	if err != nil {
-		file.Close()
 		fmt.Println("error")
 		return
 	}
 
 	fmt.Println(string(bytes))
 
-	file.Close()
+	err = file.Close()
+	if err != nil {
+		fmt.Println("error")
+		return
+	}
 }
